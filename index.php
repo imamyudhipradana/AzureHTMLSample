@@ -51,7 +51,7 @@
         </div>
             <input type="submit" class="btn btn-success" name="submit" value="Submit Data Kendaraan">
         </form>
-        <!-- <br><br> -->
+        <br><br>
         <form action="index.php" method="GET">
           <div class="form-group">
             <input type="submit" class="btn btn-info" name="load_data" value="Lihat Data Yang Sudah Registrasi">
