@@ -25,7 +25,7 @@
 		<div class="collapse navbar-collapse" id="navbarsExampleDefault">
 			<ul class="navbar-nav mr-auto">
 			<li class="nav-item active">
-				<a class="nav-link" href="https://smart-parkir.azurewebsites.net/">Home</a>
+				<a class="nav-link" href="https://submisi.azurewebsites.net/">Home</a>
 			</li>
 			
 		</div>
