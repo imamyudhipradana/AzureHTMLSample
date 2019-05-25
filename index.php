@@ -27,9 +27,7 @@
 			<li class="nav-item active">
 				<a class="nav-link" href="https://smart-parkir.azurewebsites.net/">Home</a>
 			</li>
-			<li class="nav-item">
-				<a class="nav-link" href="https://smart-parkir.azurewebsites.net/analyze.php">Analisis Kendaraan<span class="sr-only">(current)</span></a>
-			</li>
+			
 		</div>
 		</nav>
 
