@@ -1,223 +1,137 @@
 <!DOCTYPE html> 
-<html lang="en">
-	<head> 
-		<title>Latihan CRUD</title>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-		<meta name="Author" content="edi sutanto">
-		<link rel="shortcut icon" href="">
+<html>
+ <head>
+ <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="https://raw.githubusercontent.com/muhrizky/Smart-Parkir/master/parking_meter__2__Mrq_icon.ico">
 
-		<!-- Latest compiled and minified CSS -->
-		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-		<!-- <link rel="stylesheet" href="bootstrap-3.3.6/dist/css/bootstrap.min.css"> -->
-		
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <title>Undip Smart Parkir</title>
 
-		<!-- Latest compiled and minified JavaScript -->
-		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script> 
-		<!-- <script type='javascript' src="bootstrap-3.3.6/dist/js/bootstrap.min.js"></script> -->
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/starter-template/">
 
+    <!-- Bootstrap core CSS -->
+    <link href="https://getbootstrap.com/docs/4.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
-	</head>
-
-	<body>
-
-  		<div class="container-fluid">
-  			<?php 
-  			include "koneksi.php";
-
-  			switch(@$_GET['mod']) {
-  				default: ?>
-
-			      <div class="blog-header">
-			        <h1 class="blog-title">Latihan CRUD Sederhana dengan PHP dan MYSQL serta Bootstrap			      </h1>
-			      </div>
-
-    <p><a href='?mod=add'><button type='button' class='btn btn-primary'><span class='glyphicon glyphicon-plus-sign'></span> Add User</button></a></p>
-
-			    <div class="row">	
-
-			      	<div class="col-md-8">
-
-			      	  <?php include"alert.php"; ?>
-
-			          <table class="table table-striped">
-			            <thead>
-			              <tr>
-			                <th>No.</th>
-			                <th>Nama</th>
-			                <th>Alamat</th>
-			                <th>Email</th>
-			                <th>Agama</th>
-			                <th>J_Kelamin</th>
-			                <th>Status</th>
-			                <th>Action</th>
-			              </tr>
-			            </thead>
-			            <tbody>
-			            	<?php 
-			            		$no = 1;
-			            		$sql = $db->query("SELECT * FROM t_user ");
-			            		while ($data = $sql->fetch_array()) { 
-			            		echo" 
-			              <tr>
-			                <td>$no</td>
-			                <td>$data[nama]</td>
-			                <td>$data[alamat]</td>
-			                <td>$data[email]</td>
-			                <td>$data[agama]</td>
-			                <td>$data[jk]</td>
-			                <td>$data[status]</td>
-			                <td><a href='?mod=edit&id=$data[id_user]'><button type='button' class='btn btn-success'><span class='glyphicon glyphicon-edit'></span> Edit</button></a> "; ?>
-			                <a href='aksi.php?mod=delete&id=<?php echo $data['id_user'];?>' onClick="return confirm('Yakin akan menghapus Data?')"><button type='button' class='btn btn-danger'><span class='glyphicon glyphicon-remove-sign'>Delete</button></a></td>
-			              </tr>
-			              <?php $no++; } ?>
-			            </tbody>
-			          </table>
-		       		</div>
-			    <?php 
-			    break;
-
-
-	   			case 'add': ?>
-				    <form method='POST' action='aksi.php?mod=tambah' class='form-horizontal'>
-				    <h2>Tambah User</h2>
-					  <div class="form-group">
-					    <label class="col-sm-1 control-label">Nama</label>
-					    <div class="col-sm-4">
-					      <input type="text" name='nama' class="form-control" placeholder="Text input">
-					    </div>
-					  </div>
-
-					  <div class="form-group">
-					    <label class="col-sm-1 control-label">Alamat</label>
-					    <div class="col-sm-4">
-					      <textarea class="form-control" name='alamat' rows="3" placeholder="Alamat"></textarea>
-					    </div>
-					  </div>
-
-					  <div class="form-group">
-					  <label class="col-sm-1 control-label">Email</label>
-					    <div class="col-sm-4">
-					      <input type="email" name='email' class="form-control" placeholder="Email">
-					    </div>
-					  </div>
-
-					  <div class="form-group">
-					  <label class="col-sm-1 control-label">Agama</label>
-					  <div class="col-sm-4">
-					    <select class="form-control" name='agama'>
-						  <option value=''>-Pilih Agama-</option>
-						  <option value='Islam'>Islam</option>
-						  <option value='Kristen'>Kristen</option>
-						  <option value='Katolik'>Katolik</option>
-						  <option value='Hindu'>Hindu</option>
-						  <option value='Budha'>Budha</option>
-						  <option value='Konghuchu'>Konghuchu</option>
-						</select>
-					  </div>
-					  </div>
-
-					  <div class="form-group">
-					  	<label class="col-sm-1 control-label">Jenis Kelamin</label>
-					  	<div class="col-sm-4">
-						  <input type="radio" name="jk" id="jk" value="L">Laki-laki &nbsp;
-						  <input type="radio" name="jk" id="jk" value="P">Perempuan
-					  </div>
-					  </div>
-
-					  <div class="form-group">
-					  	<label class="col-sm-1 control-label">Status</label>
-					  	<div class="col-sm-4">
-						  <input type="radio" name="status" id="status" value="A">Aktif  &nbsp;
-						  <input type="radio" name="status" id="status" value="T">Tidak Aktif
-						</div>
-					  </div>
-
-					  <div class="form-group">
-					    <div class="col-sm-offset-1 col-sm-4">
-					      <button type='submit' name='submit' class='btn btn-primary' onClick="return confirm('Yakin akan Tambah Data?')">Tambah</button>
-					    </div>
-					  </div>
-					</form>
-				<?php
-				break;
-				
-				case 'edit':
-					$sql = $db->query("SELECT * FROM t_user WHERE id_user ='$_GET[id]' ");
-					$data = $sql->fetch_array();
-					
-					?>
-				    <form method='POST' action='aksi.php?mod=edit' class='form-horizontal'>
-				    <h2>Edit User</h2>
-				    	<!-- post kan id user type hidden-->
-				    	<input type='hidden' name='id_user' value='<?php echo $data['id_user'];?>'>
-					  <div class="form-group">
-					    <label class="col-sm-1 control-label">Nama</label>
-					    <div class="col-sm-4">
-					      <input type="text" name='nama' class="form-control" placeholder="Nama" value="<?php echo $data['nama'];?> ">
-					    </div>
-					  </div>
-
-					  <div class="form-group">
-					    <label class="col-sm-1 control-label">Alamat</label>
-					    <div class="col-sm-4">
-					      <textarea class="form-control" name='alamat' rows="3" placeholder="Alamat"><?php echo $data['alamat'];?></textarea>
-					    </div>
-					  </div>
-
-					  <div class="form-group">
-					  <label class="col-sm-1 control-label">Email</label>
-					    <div class="col-sm-4">
-					      <input type="email" name='email' class="form-control" placeholder="Email" value="<?php echo $data['email'];?>">
-					    </div>
-					  </div>
-
-					  <div class="form-group">
-					  <label class="col-sm-1 control-label">Agama</label>
-					  <div class="col-sm-4">
-					    <select class="form-control" name='agama'>
-						  <option value=''>-Pilih Agama-</option>
-						  <option value='Islam' <?php if ($data['agama']=='Islam'){echo"SELECTED";}?>>Islam</option>
-						  <option value='Kristen' <?php if ($data['agama']=='Kristen'){echo"SELECTED";}?>>Kristen</option>
-						  <option value='Katolik' <?php if ($data['agama']=='Katolik'){echo"SELECTED";}?>>Katolik</option>
-						  <option value='Hindu' <?php if ($data['agama']=='Hindu'){echo"SELECTED";}?>>Hindu</option>
-						  <option value='Budha' <?php if ($data['agama']=='Budha'){echo"SELECTED";}?>>Budha</option>
-						  <option value='Konghuchu' <?php if ($data['agama']=='Konghuchu'){echo"SELECTED";}?>>Konghuchu</option>
-						</select>
-					  </div>
-					  </div>
-
-					  <div class="form-group">
-					  	<label class="col-sm-1 control-label">Jenis Kelamin</label>
-					  	<div class="col-sm-4">
-						  <input type="radio" name="jk" id="jk" value="L" <?php if ($data['jk'] =='L'){ echo "CHECKED"; }?>>Laki-laki &nbsp;
-						  <input type="radio" name="jk" id="jk" value="P" <?php if ($data['jk'] =='P'){ echo "CHECKED"; }?>>Perempuan
-					  </div>
-					  </div>
-
-					  <div class="form-group">
-					  	<label class="col-sm-1 control-label">Status</label>
-					  	<div class="col-sm-4">
-						  <input type="radio" name="status" id="status" value="A" <?php if ($data['status'] =='A'){ echo "CHECKED"; }?> >Aktif  &nbsp;
-						  <input type="radio" name="status" id="status" value="T" <?php if ($data['status'] =='T'){ echo "CHECKED"; }?> >Tidak Aktif
-						</div>
-					  </div>
-
-					  <div class="form-group">
-					    <div class="col-sm-offset-1 col-sm-4">
-					      <button type='submit' name='submit' class='btn btn-primary' onClick="return confirm('Yakin akan Edit Data?')">Save</button>
-					      <button type='reset' name='reset' class='btn btn-primary'>Reset</button>
-					    </div>
-					  </div>
-					</form>
-				<?php
-				break;
-			} ?>
-
-			</div>
+    <!-- Custom styles for this template -->
+    <link href="starter-template.css" rel="stylesheet">
+  </head>
+ <body>
+ <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarsExampleDefault">
+			<ul class="navbar-nav mr-auto">
+			<li class="nav-item active">
+				<a class="nav-link" href="https://smart-parkir.azurewebsites.net/">Home</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="https://smart-parkir.azurewebsites.net/analyze.php">Analisis Kendaraan<span class="sr-only">(current)</span></a>
+			</li>
 		</div>
-	</body>
+		</nav>
+
+    <main role="main" class="container">
+    <div class="starter-template"> <br><br><br>
+        <h1>Smart Parkir Universitas Diponegoro</h1>
+        <p class="lead">Isikan dengan lengkap dari <b>Nama, NIM, TNBK, Foto Kendaraan </b> anda.<br> Kemudian Click <b>Submit Data Kendaraan</b> untuk Registrasi Kendaraan anda.</p> <br>
+        <span class="border-top my-3"></span>
+      </div>
+        <form action="index.php" method="POST">
+          <div class="form-group">
+            <label for="name">Nama: </label>
+            <input type="text" class="form-control" name="nama" id="name" required="" >
+        </div>
+        <div class="form-group">
+            <label for="email">Nomor Induk Mahasiswa (NIM): </label>
+            <input type="text" class="form-control" name="nim" id="nim" required=""maxlength="15">
+        </div>
+        <div class="form-group">
+            <label for="NPK">Tanda Nomor Kendaraan Bermotor (TKNB): </label>
+            <input type="text" class="form-control" name="npk" id="npk" required=""maxlength="8">
+        </div>
+        <!-- <div class="form-group" action="index.php" method="post" enctype="multipart/form-data">
+            <label for="upload">Unggah Foto Kendaraan : </label> <br>
+            <input type="file" name="fileToUpload" accept=".jpeg,.jpg,.png" required="">
+            <br><br> -->
+            <input type="submit" class="btn btn-success" name="submit" value="Submit Data Kendaraan">
+        </form>
+        <!-- <br><br> -->
+        <form action="index.php" method="GET">
+          <div class="form-group">
+            <input type="submit" class="btn btn-info" name="load_data" value="Lihat Data Yang Sudah Registrasi">
+          </div>
+        </form>   
+   
+ <?php
+    $host = "registration1.database.windows.net";
+    $user = "dicoding";
+    $pass = "@Qwerty123";
+    $db = "Registration";
+    try {
+        $conn = new PDO("sqlsrv:server = $host; Database = $db", $user, $pass);
+        $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
+    } catch(Exception $e) {
+        echo "Failed: " . $e;
+    }
+    if (isset($_POST['submit'])) {
+        try {
+            $name = $_POST['nama'];
+            $nim = $_POST['nim'];
+            $npk = $_POST['npk'];
+            $date = date("Y-m-d");
+            // Insert data
+            $sql_insert = "INSERT INTO Registration (nama, nim, npk, date) 
+                        VALUES (?,?,?,?)";
+            $stmt = $conn->prepare($sql_insert);
+            $stmt->bindValue(1, $name);
+            $stmt->bindValue(2, $nim);
+            $stmt->bindValue(3, $npk);
+            $stmt->bindValue(4, $date);
+            $stmt->execute();
+        } catch(Exception $e) {
+            echo "Failed: " . $e;
+        }
+        echo "<h3>Your're registered!</h3>";
+    } else if (isset($_GET['load_data'])) {
+        try {
+            $sql_select = "SELECT * FROM Registration";
+            $stmt = $conn->query($sql_select);
+            $registrants = $stmt->fetchAll(); 
+            if(count($registrants) > 0) {
+                echo "<h2>Mahasiswa yang sudah teregistrasi kendaraannya sebanyak : ".count($registrants)." Orang</h2>";
+                echo "<table class='table table-hover'><thead>";
+                echo "<tr><th>Name</th>";
+                echo "<th>NIM</th>";
+                echo "<th>TKNB</th>";
+                echo "<th>Date</th></tr></thead><tbody>";
+                foreach($registrants as $registrant) {
+                    echo "<tr><td>".$registrant['nama']."</td>";
+                    echo "<td>".$registrant['nim']."</td>";
+                    echo "<td>".$registrant['npk']."</td>";
+                    echo "<td>".$registrant['date']."</td></tr>";
+                }
+                echo "</tbody></table>";
+            } else {
+                echo "<h3>No one is currently registered.</h3>";
+            }
+        } catch(Exception $e) {
+            echo "Failed: " . $e;
+        }
+    }
+ ?>
+ </div>
+    </main><!-- /.container -->
+
+</tbody>
+</table>
+ 
+<!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="https://getbootstrap.com/docs/4.0/assets/js/vendor/popper.min.js"></script>
+    <script src="https://getbootstrap.com/docs/4.0/dist/js/bootstrap.min.js"></script>
+  </body>
 </html>
