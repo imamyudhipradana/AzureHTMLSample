@@ -66,9 +66,9 @@
         </form>   
    
  <?php
-    $host = "registration1.database.windows.net";
-    $user = "dicoding";
-    $pass = "@Qwerty123";
+    $host = "submisi.database.windows.net";
+    $user = "adminserver";
+    $pass = "@dmin123456789";
     $db = "Registration";
     try {
         $conn = new PDO("sqlsrv:server = $host; Database = $db", $user, $pass);
