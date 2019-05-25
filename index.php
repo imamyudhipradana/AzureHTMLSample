@@ -34,7 +34,7 @@
     <main role="main" class="container">
     <div class="starter-template"> <br><br><br>
         <h1>Smart Parkir Masuya</h1>
-        <p class="lead">Isikan dengan lengkap dari <b>Nama, NIM, TNBK, Foto Kendaraan </b> anda.<br> Kemudian Click <b>Submit Data Kendaraan</b> untuk Registrasi Kendaraan anda.</p> <br>
+        <p class="lead">Isikan dengan lengkap dari <b>Nama, NIM, TNBK, Merk Kendaraan Anda </b> anda.<br> Kemudian Click <b>Submit Data Kendaraan</b> untuk Registrasi Kendaraan anda.</p> <br>
         <span class="border-top my-3"></span>
       </div>
         <form action="index.php" method="POST">
