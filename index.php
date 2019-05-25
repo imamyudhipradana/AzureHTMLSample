@@ -5,9 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="https://raw.githubusercontent.com/muhrizky/Smart-Parkir/master/parking_meter__2__Mrq_icon.ico">
 
-    <title>Undip Smart Parkir</title>
+    <title>Masuya Smart Parkir</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/starter-template/">
 
@@ -50,14 +49,6 @@
             <label for="NPK">Tanda Nomor Kendaraan Bermotor (TKNB): </label>
             <input type="text" class="form-control" name="npk" id="npk" required=""maxlength="8">
         </div>
-	<div class="form-group">
-            <label for="Merk">Merk Kendaraan: </label>
-            <input type="text" class="form-control" name="merk" id="merk" required=""maxlength="12">
-        </div>
-        <!-- <div class="form-group" action="index.php" method="post" enctype="multipart/form-data">
-            <label for="upload">Unggah Foto Kendaraan : </label> <br>
-            <input type="file" name="fileToUpload" accept=".jpeg,.jpg,.png" required="">
-            <br><br> -->
             <input type="submit" class="btn btn-success" name="submit" value="Submit Data Kendaraan">
         </form>
         <!-- <br><br> -->
