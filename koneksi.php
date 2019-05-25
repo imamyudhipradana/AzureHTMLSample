@@ -1,8 +1,14 @@
-<?php
-	$dbUser = 'localhost';
-	$dbHost = 'root';
-	$dbPass = '';
-	$dbName = 'blog_crud';
+// PHP Data Objects(PDO) Sample Code:
+try {
+    $conn = new PDO("sqlsrv:server = tcp:submisi.database.windows.net,1433; Database = blog_crud", "adminserver", "{your_password_here}");
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+}
+catch (PDOException $e) {
+    print("Error connecting to SQL Server.");
+    die(print_r($e));
+}
 
-	$db = mysqli_connect($dbUser, $dbHost, $dbPass, $dbName);
-?>
+// SQL Server Extension Sample Code:
+$connectionInfo = array("UID" => "adminserver@submisi", "pwd" => "{your_password_here}", "Database" => "blog_crud", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
+$serverName = "tcp:submisi.database.windows.net,1433";
+$conn = sqlsrv_connect($serverName, $connectionInfo);
