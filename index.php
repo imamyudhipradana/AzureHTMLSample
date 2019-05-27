@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Karyawan PT. Masuya Graha Trikencana (Branch Bandung)</title>
+    <title>Data Kendaraan Bermotor PT. Indofood(Branch Bandung)</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/starter-template/">
 
@@ -42,13 +42,13 @@
             <input type="text" class="form-control" name="nama" id="name" required="" >
         </div>
         <div class="form-group">
-            <label for="email">Nomor Induk Mahasiswa (NIM): </label>
+            <label for="email">Nomor Induk Motor(NIM): </label>
             <input type="text" class="form-control" name="nim" id="nim" required=""maxlength="16">
         </div>
-        <div class="form-group">
+<!--         <div class="form-group">
             <label for="NPK">Nomor Induk Karyawan: </label>
             <input type="text" class="form-control" name="nik" id="nik" required=""maxlength="20">
-        </div>
+        </div> -->
             <input type="submit" class="btn btn-success" name="submit" value="Submit Data Karyawan">
         </form>
         <br><br>
