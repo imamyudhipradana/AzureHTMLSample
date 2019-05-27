@@ -33,7 +33,7 @@
     <main role="main" class="container">
     <div class="starter-template"> <br><br><br>
         <h1>Smart Parkir Masuya</h1>
-        <p class="lead">Isikan dengan lengkap dari <b>Nama, NIM, TNBK, Merk Kendaraan </b> anda.<br> Kemudian Click <b>Submit Data Kendaraan</b> untuk Registrasi Kendaraan anda.</p> <br>
+        <p class="lead">Isikan dengan lengkap dari <b>Nama, NIK, Posisi Pekerjaan </b> anda.<br> Kemudian Click <b>Submit Data Karyawan</b> untuk Registrasi Kendaraan anda.</p> <br>
         <span class="border-top my-3"></span>
       </div>
         <form action="index.php" method="POST">
@@ -42,19 +42,19 @@
             <input type="text" class="form-control" name="nama" id="name" required="" >
         </div>
         <div class="form-group">
-            <label for="email">Nomor Induk Mahasiswa (NIM): </label>
-            <input type="text" class="form-control" name="nim" id="nim" required=""maxlength="15">
+            <label for="email">Nomor Induk KTP (NIK): </label>
+            <input type="text" class="form-control" name="nik" id="nik" required=""maxlength="15">
         </div>
         <div class="form-group">
-            <label for="NPK">Tanda Nomor Kendaraan Bermotor (TKNB): </label>
-            <input type="text" class="form-control" name="npk" id="npk" required=""maxlength="8">
+            <label for="KYW">Posisi Karyawan: </label>
+            <input type="text" class="form-control" name="kyw" id="kyw" required=""maxlength="8">
         </div>
-            <input type="submit" class="btn btn-success" name="submit" value="Submit Data Kendaraan">
+            <input type="submit" class="btn btn-success" name="submit" value="Submit Data Karyawan">
         </form>
         <br><br>
         <form action="index.php" method="GET">
           <div class="form-group">
-            <input type="submit" class="btn btn-info" name="load_data" value="Lihat Data Yang Sudah Registrasi">
+            <input type="submit" class="btn btn-info" name="load_data" value="Lihat Data Yang Sudah Terinput">
           </div>
         </form>   
    
