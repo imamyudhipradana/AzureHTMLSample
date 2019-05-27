@@ -8,13 +8,13 @@
 
     <title>Karyawan PT. Masuya Graha Trikencana (Branch Bandung)</title>
 
-<!--     <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/starter-template/">
- -->
-    <!-- Bootstrap core CSS -->
-<!--     <link href="https://getbootstrap.com/docs/4.0/dist/css/bootstrap.min.css" rel="stylesheet">
- -->
-    <!-- Custom styles for this template -->
-<!--     <link href="starter-template.css" rel="stylesheet"> -->
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/starter-template/">
+
+    Bootstrap core CSS
+    <link href="https://getbootstrap.com/docs/4.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!--     <!-- Custom styles for this template -->
+<!--     <link href="starter-template.css" rel="stylesheet"> --> -->
   </head>
  <body>
  <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
@@ -42,8 +42,8 @@
             <input type="text" class="form-control" name="nama" id="name" required="" >
         </div>
         <div class="form-group">
-            <label for="email">Nomor Induk Karyawan (NIK): </label>
-            <input type="text" class="form-control" name="nik" id="nik" required=""maxlength="16">
+            <label for="email">Nomor Pokok Karyawan (NPK): </label>
+            <input type="text" class="form-control" name="npk" id="npk" required=""maxlength="16">
         </div>
         <div class="form-group">
             <label for="KYW">Posisi Karyawan: </label>
@@ -72,7 +72,7 @@
     if (isset($_POST['submit'])) {
         try {
             $name = $_POST['nama'];
-            $nik = $_POST['nik'];
+            $npk = $_POST['nik'];
             $kyw = $_POST['kyw'];
             $date = date("Y-m-d");
             // Insert data
@@ -80,7 +80,7 @@
                         VALUES (?,?,?,?)";
             $stmt = $conn->prepare($sql_insert);
             $stmt->bindValue(1, $name);
-            $stmt->bindValue(2, $nik);
+            $stmt->bindValue(2, $npk);
             $stmt->bindValue(3, $kyw);
             $stmt->bindValue(4, $date);
             $stmt->execute();
@@ -97,12 +97,12 @@
                 echo "<h2>Mahasiswa yang sudah teregistrasi kendaraannya sebanyak : ".count($registrants)." Orang</h2>";
                 echo "<table class='table table-hover'><thead>";
                 echo "<tr><th>Name</th>";
-                echo "<th>NIK</th>";
+                echo "<th>NPK</th>";
                 echo "<th>KYW</th>";
                 echo "<th>Date</th></tr></thead><tbody>";
                 foreach($registrants as $registrant) {
                     echo "<tr><td>".$registrant['nama']."</td>";
-                    echo "<td>".$registrant['nik']."</td>";
+                    echo "<td>".$registrant['npk']."</td>";
                     echo "<td>".$registrant['kyw']."</td>";
                     echo "<td>".$registrant['date']."</td></tr>";
                 }
