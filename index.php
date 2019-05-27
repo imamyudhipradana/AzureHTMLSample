@@ -72,16 +72,16 @@
     if (isset($_POST['submit'])) {
         try {
             $name = $_POST['nama'];
-            $nim = $_POST['nim'];
-            $npk = $_POST['npk'];
+            $nik = $_POST['nik'];
+            $kyw = $_POST['kyw'];
             $date = date("Y-m-d");
             // Insert data
-            $sql_insert = "INSERT INTO daftar (nama, nim, npk, date) 
+            $sql_insert = "INSERT INTO daftar (nama, nik, kyw, date) 
                         VALUES (?,?,?,?)";
             $stmt = $conn->prepare($sql_insert);
             $stmt->bindValue(1, $name);
-            $stmt->bindValue(2, $nim);
-            $stmt->bindValue(3, $npk);
+            $stmt->bindValue(2, $nik);
+            $stmt->bindValue(3, $kyw);
             $stmt->bindValue(4, $date);
             $stmt->execute();
         } catch(Exception $e) {
@@ -97,13 +97,13 @@
                 echo "<h2>Mahasiswa yang sudah teregistrasi kendaraannya sebanyak : ".count($registrants)." Orang</h2>";
                 echo "<table class='table table-hover'><thead>";
                 echo "<tr><th>Name</th>";
-                echo "<th>NIM</th>";
-                echo "<th>TKNB</th>";
+                echo "<th>NIK</th>";
+                echo "<th>KYW</th>";
                 echo "<th>Date</th></tr></thead><tbody>";
                 foreach($registrants as $registrant) {
                     echo "<tr><td>".$registrant['nama']."</td>";
-                    echo "<td>".$registrant['nim']."</td>";
-                    echo "<td>".$registrant['npk']."</td>";
+                    echo "<td>".$registrant['nik']."</td>";
+                    echo "<td>".$registrant['kyw']."</td>";
                     echo "<td>".$registrant['date']."</td></tr>";
                 }
                 echo "</tbody></table>";
