@@ -43,7 +43,7 @@
         </div>
         <div class="form-group">
             <label for="email">Nomor Induk KTP (NIK): </label>
-            <input type="text" class="form-control" name="nik" id="nik" required=""maxlength="15">
+            <input type="text" class="form-control" name="nik" id="nik" required=""maxlength="16">
         </div>
         <div class="form-group">
             <label for="KYW">Posisi Karyawan: </label>
