@@ -47,7 +47,7 @@
         </div>
         <div class="form-group">
             <label for="KYW">Posisi Karyawan: </label>
-            <input type="text" class="form-control" name="kyw" id="kyw" required=""maxlength="8">
+            <input type="text" class="form-control" name="kyw" id="kyw" required=""maxlength="20">
         </div>
             <input type="submit" class="btn btn-success" name="submit" value="Submit Data Karyawan">
         </form>
