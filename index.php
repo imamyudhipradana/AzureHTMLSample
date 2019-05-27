@@ -49,12 +49,12 @@
             <label for="NPK">Nomor Pokok Kendaraan: </label>
             <input type="text" class="form-control" name="npk" id="npk" required=""maxlength="20">
         </div>
-            <input type="submit" class="btn btn-success" name="submit" value="Submit Data Karyawan">
+            <input type="submit" class="btn btn-success" name="submit" value="Simpan">
         </form>
         <br><br>
         <form action="index.php" method="GET">
           <div class="form-group">
-            <input type="submit" class="btn btn-info" name="load_data" value="Lihat Data Yang Sudah Terinput">
+            <input type="submit" class="btn btn-info" name="load_data" value="Data Masuk">
           </div>
         </form>   
    
