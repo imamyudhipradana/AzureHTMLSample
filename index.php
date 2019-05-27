@@ -32,7 +32,7 @@
 
     <main role="main" class="container">
     <div class="starter-template"> <br><br><br>
-        <h1>Data Karyawan Masuya</h1>
+        <h1>Data Kendaraan Bermotor PT. Indofood</h1>
 <!--         <p class="lead">Isikan dengan lengkap dari <b>Nama, NIK, Posisi Pekerjaan </b> anda.<br> Kemudian Click <b>Submit Data Karyawan</b> untuk Registrasi Kendaraan anda.</p> <br> -->
         <span class="border-top my-3"></span>
       </div>
@@ -45,10 +45,10 @@
             <label for="email">Nomor Induk Motor(NIM): </label>
             <input type="text" class="form-control" name="nim" id="nim" required=""maxlength="16">
         </div>
-<!--         <div class="form-group">
-            <label for="NPK">Nomor Induk Karyawan: </label>
-            <input type="text" class="form-control" name="nik" id="nik" required=""maxlength="20">
-        </div> -->
+        <div class="form-group">
+            <label for="NPK">Nomor Pokok Kendaraan: </label>
+            <input type="text" class="form-control" name="npk" id="npk" required=""maxlength="20">
+        </div>
             <input type="submit" class="btn btn-success" name="submit" value="Submit Data Karyawan">
         </form>
         <br><br>
