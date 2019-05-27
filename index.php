@@ -8,8 +8,8 @@
 
     <title>Data Kendaraan Bermotor PT. Indofood(Branch Bandung)</title>
 
-    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/starter-template/">
-
+<!--     <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/starter-template/">
+ -->
     Bootstrap core CSS
     <link href="https://getbootstrap.com/docs/4.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
