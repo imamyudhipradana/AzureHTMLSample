@@ -32,7 +32,7 @@
 
     <main role="main" class="container">
     <div class="starter-template"> <br><br><br>
-        <h1>Smart Parkir Masuya</h1>
+        <h1>Data Karyawan Masuya</h1>
 <!--         <p class="lead">Isikan dengan lengkap dari <b>Nama, NIK, Posisi Pekerjaan </b> anda.<br> Kemudian Click <b>Submit Data Karyawan</b> untuk Registrasi Kendaraan anda.</p> <br> -->
         <span class="border-top my-3"></span>
       </div>
